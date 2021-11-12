@@ -34,4 +34,30 @@ subplot(2,2,4);
 imshow(grad,[]); 
 title('图像的sobel梯度');
 
+%%
+%prewitt滤波器
+Gx=[1.0 1.0 1.0;0.0 0.0 0.0;-1.0 -1.0 -1.0];
+Gy=[-1.0 0.0 1.0;-1.0 0.0 1.0;-1.0 0.0 1.0];
+
+gradx=conv2(Gx,img1_y,'full'); 
+gradx=abs(gradx); %计算图像的prewwit垂直梯度 
+figure(2);
+subplot(2,2,2); 
+imshow(gradx,[]); 
+title('图像的prewwit垂直梯度');
+ 
+grady=conv2(Gy,img1_y,'full'); 
+grady=abs(grady); %计算图像的prewwit水平梯度 
+subplot(2,2,3); 
+imshow(grady,[]); 
+title('图像的prewwit水平梯度'); 
+ 
+grad=gradx+grady;  %得到图像的prewwit梯度 
+subplot(2,2,4); 
+imshow(grad,[]); 
+title('图像的prewwit梯度');
+
+
+
+
 
