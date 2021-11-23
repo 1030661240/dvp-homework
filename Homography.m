@@ -1,4 +1,4 @@
-%单应矩阵 选点(手选)
+%单应矩阵 选点
 clear
 clc;
 image1=imread('1.jpg');
